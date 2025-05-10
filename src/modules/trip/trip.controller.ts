@@ -19,6 +19,22 @@ export class TripController {
     }
   }
 
+  @MessagePattern('find_connected_trips')
+  async findConnectedTrips(
+    @Payload() data: { departureId: number; destinationId: number; departureDate: string },
+  ): Promise<ApiResponse<any>> {
+    try {
+      const response = await this.tripService.findConnectedTrips(
+        data.departureId,
+        data.destinationId,
+        data.departureDate,
+      );
+      return ApiResponse.success(response);
+    } catch (error) {
+      return handleError(error);
+    }
+  }
+
   @MessagePattern('get_trip_detail_on_platform')
   async getTripDetailOnPlatform(
     @Payload() id: number,

@@ -88,3 +88,41 @@ export interface DTO_RP_TripPoint {
   time_point: string;
   start_time: string;
 }
+
+export class DTO_RP_ConnectionPoint {
+  province: {
+    id: number;
+    name: string;
+  };
+  pointId: number;
+  pointName: string;
+}
+
+export class DTO_RP_ConnectedTrip {
+  firstTrip: DTO_RP_ListTrip;
+  secondTrip: DTO_RP_ListTrip;
+  totalPrice: number;
+  connectionPoint: DTO_RP_ConnectionPoint;
+  waitingTime: string;
+}
+
+export class DTO_RP_SearchResults {
+  directTrips: DTO_RP_TripInfo[];
+  connectedTrips: DTO_RP_ConnectedTripInfo[];
+}
+
+export class DTO_RP_ConnectedTripInfo {
+  firstTrip: DTO_RP_TripInfo;
+  secondTrip: DTO_RP_TripInfo;
+  totalPrice: number;
+  connectionPoint: {
+    province: {
+      id: number;
+      name: string;
+    };
+    pointId: number;
+    pointName: string;
+  };
+  waitingTime: string;
+  totalDuration: string;
+}
