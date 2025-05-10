@@ -52,6 +52,7 @@ export class DTO_RP_TripDetail {
   total_column: number;
   tickets: DTO_RP_Ticket[];
   policy_content: string;
+  transit_content: string;
 }
 export class DTO_RP_Ticket {
   id: number;

@@ -552,7 +552,8 @@ export class TripService {
         base_price: ticket.base_price || 0,
         status_booking_ticket: ticket.status_booking_ticket || false,
       })),
-      policy_content: trip.company.policies[0].content,
+      policy_content: trip.company.policies[0]?.content ?? '',
+      transit_content: trip.company.transits[0]?.content ?? '',
     };
 
     console.log('[13] Hoàn thành xử lý. Kết quả:', result);

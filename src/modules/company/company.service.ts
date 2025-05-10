@@ -101,7 +101,7 @@ export class CompanyService {
   async getCompany(id: number): Promise<Company> {
     const company = await this.companyRepository.findOne({
       where: { id },
-      relations: ['policies'],
+      relations: ['policies', 'transits'],
     });
 
     return company;

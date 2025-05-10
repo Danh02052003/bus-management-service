@@ -13,6 +13,8 @@ import { PointModule } from './modules/point/point.module';
 import { TripModule } from './modules/trip/trip.module';
 import { TicketModule } from './modules/ticket/ticket.module';
 import { PolicyModule } from './modules/policy/policy.module';
+import { InterestInRouteModule } from './modules/interest-in-route/interest-in-route.module';
+import { TransitModule } from './modules/transit/transit.module';
 
 @Module({
   imports: [
@@ -28,6 +30,8 @@ import { PolicyModule } from './modules/policy/policy.module';
     TripModule,
     TicketModule,
     PolicyModule,
+    InterestInRouteModule,
+    TransitModule,
   ],
   controllers: [],
   providers: [RedisService],
