@@ -1142,7 +1142,7 @@ export class TripService {
           console.log(`Bỏ qua chuyến ${firstTrip.id} vì không có thông tin điểm đến`);
           continue;
         }
-
+        
         // Tính ngày và thời gian đến tỉnh trung chuyển chính xác
         const firstTripDepartureDate = new Date(firstTrip.date_departure || departureDate);
         const firstTripDepartureTime = firstTrip.time_departure;
@@ -1199,10 +1199,10 @@ export class TripService {
         
         console.log(`Tìm chuyến ngày hôm sau khi đến tỉnh trung gian (${nextDayStr})...`);
         const nextDayTrips = await this.searchTripsBetweenProvinces(
-          connection.provinceId, 
-          destinationId, 
-          nextDayDate
-        );
+            connection.provinceId, 
+            destinationId, 
+            nextDayDate
+          );
         
         if (nextDayTrips.length > 0) {
           console.log(`Tìm thấy ${nextDayTrips.length} chuyến đi vào ngày hôm sau khi đến tỉnh trung gian`);
@@ -1405,7 +1405,7 @@ export class TripService {
     // Nếu không có thông tin chính xác, ước tính khoảng 9 tiếng di chuyển (540 phút)
     return 540;
   }
-
+  
   /**
    * Tìm kiếm chuyến đi giữa hai tỉnh, có thể chỉ định thời gian khởi hành tối thiểu
    */
